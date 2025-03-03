@@ -1,41 +1,18 @@
 Please take a look at my code~
 Data!!!!!!!! Science!!!!!!!
-1. 游戏行为数据采集SDK (GameEventTracker类)
-这部分实现了游戏内事件追踪系统，主要功能包括：
+Game Behavior Data Collection SDK (GameEventTracker Class) This part implements the in-game event tracking system. The main functions include:
+Initialize player sessions and user information Track various game events (startup, payment, upgrade, task completion, card drawing, etc.) Ensure data security through a signature mechanism Send data to the backend server for analysis
 
-初始化玩家会话和用户信息
-追踪各类游戏事件（启动、支付、升级、任务完成、抽卡等）
-通过签名机制确保数据安全性
-将数据发送到后台服务器进行分析
+This SDK is designed to be embedded in the game client to collect player behavior data and provide a basic data source for subsequent analysis. 2. Player Churn Warning Model (ChurnPredictionModel Class) This is a machine learning model used to predict the risk of player churn:
 
-该SDK设计用于嵌入到游戏客户端中，收集玩家行为数据，为后续分析提供基础数据源。
-2. 玩家流失预警模型 (ChurnPredictionModel类)
-这是一个机器学习模型，用于预测玩家可能流失的风险：
+Prepare multi-dimensional feature data, including activity, game progress, social behavior, and consumption habits Use the random forest algorithm to train the churn prediction model Evaluate model performance and analyze feature importance Predict the probability of churn for each player and classify it as low/medium/high risk Support model saving and loading
 
-准备多维度特征数据，包括活跃度、游戏进度、社交行为和消费习惯
-使用随机森林算法训练流失预测模型
-评估模型性能，分析特征重要性
-为每个玩家预测流失概率，并分类为低/中/高风险
-支持模型的保存和加载
+This model helps the operation team identify players who may churn in advance and implement targeted retention measures. 3. Real-time data processing Flink task (process_game_events function) This part processes real-time game data streams, and its functions include:
 
-该模型帮助运营团队提前识别可能流失的玩家，实施针对性的挽留措施。
-3. 实时数据处理Flink任务 (process_game_events函数)
-这部分处理实时游戏数据流，功能包括：
+Use Apache Flink framework to process event streams in Kafka Set up a checkpoint mechanism to ensure fault tolerance Validate, transform and enrich raw event data Filter invalid events to ensure data quality Send processed data to downstream systems
 
-使用Apache Flink框架处理Kafka中的事件流
-设置检查点机制确保容错性
-对原始事件数据进行验证、转换和丰富
-筛选无效事件，确保数据质量
-将处理后的数据发送到下游系统
+This module implements the basic work of real-time data analysis and supports real-time monitoring and rapid response. 4. Data visualization Dashboard (Dash application) This is an interactive data analysis platform that mainly displays:
 
-该模块实现了实时数据分析的基础工作，支持实时监控和快速响应。
-4. 数据可视化Dashboard (Dash应用)
-这是一个交互式数据分析平台，主要展示：
+Key business indicator (KPI) panel: DAU, revenue, new users, retention rate, etc. Trend chart: daily active user changes, revenue trends User retention heat map: display user retention in different periods Player level distribution and payment conversion funnel chart Support filtering data by game and time range
 
-关键业务指标(KPI)面板：DAU、收入、新增用户、留存率等
-趋势图表：日活跃用户变化、收入走势
-用户留存热力图：展示不同时期用户的留存情况
-玩家等级分布和付费转化漏斗图
-支持按游戏和时间范围筛选数据
-
-该平台为决策者提供直观的数据可视化，支持数据驱动的决策。
+The platform provides decision makers with intuitive data visualization and supports data-driven decision making.
