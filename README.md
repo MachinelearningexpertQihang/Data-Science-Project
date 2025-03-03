@@ -1,58 +1,8 @@
 Please take a look at my code~
 Data!!!!!!!! Science!!!!!!!
 Project 1
-The goal of this project is to build a predictive model for stock prices using an LSTM neural network. LSTMs are a type of Recurrent Neural Network (RNN) that are well-suited for time series data due to their ability to capture long-term dependencies. The model is trained on historical stock prices and can be used to predict future prices.
-
-Model Architecture
-The LSTM model consists of the following components:
-
-LSTM Layer: The core of the model, which processes sequential data and captures temporal dependencies.
-
-Fully Connected Layer: A linear layer that maps the LSTM output to the predicted stock price.
-
-Loss Function: Mean Squared Error (MSE) is used to measure the difference between predicted and actual stock prices.
-
-Optimizer: Adam optimizer is used to update the model's weights during training.
-
-Key Parameters:
-input_size: Number of features in the input data (1 for univariate time series).
-
-hidden_size: Number of hidden units in the LSTM layer.
-
-num_layers: Number of stacked LSTM layers.
-
-output_size: Number of output features (1 for predicting a single value).
-
-Data Preprocessing
-Data Collection: Historical stock data is fetched using the yfinance library.
-
-Normalization: The data is normalized using MinMaxScaler to scale the values between 0 and 1.
-
-Sequence Creation: The data is split into sequences of a fixed length (seq_length) to create input-output pairs for training.
-
-Train-Test Split: The data is split into training and testing sets (80% training, 20% testing).
-
-Training the Model
-The model is trained using the following steps:
-
-Forward Pass: The input sequence is passed through the LSTM layer, and the output is generated.
-
-Loss Calculation: The Mean Squared Error (MSE) between the predicted and actual values is computed.
-
-Backward Pass: Gradients are calculated using backpropagation, and the model's weights are updated using the Adam optimizer.
-
-Epochs: The training process is repeated for a fixed number of epochs (e.g., 100).
-
-Backtesting the Model
-The model is evaluated on the test set using the following metrics:
-
-Mean Squared Error (MSE): Measures the average squared difference between predicted and actual values.
-
-Root Mean Squared Error (RMSE): The square root of MSE, providing a more interpretable error metric.
-
-Mean Absolute Error (MAE): Measures the average absolute difference between predicted and actual values.
-
-The results are visualized by plotting the predicted and actual stock prices.
+The goal of this project is to build a predictive model for stock prices using an LSTM neural network. LSTMs are a type of Recurrent Neural Network (RNN) that are well-suited for time series data due to their ability to capture long-term dependencies. The model is trained on historical stock prices and can be used to predict future prices.Backtesting the Model
+The model is evaluated on the test set using the following metrics.
 
 Future Predictions
 The trained model can be used to predict future stock prices. Given the last known sequence of stock prices, the model predicts the next n time steps (e.g., 30 days). The predictions are inverse-transformed to their original scale and visualized.
