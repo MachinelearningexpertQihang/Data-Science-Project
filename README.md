@@ -1,7 +1,6 @@
 Please take a look at my code~
 Data!!!!!!!! Science!!!!!!!
-Project 1:
-Introduction
+Project 1
 The goal of this project is to build a predictive model for stock prices using an LSTM neural network. LSTMs are a type of Recurrent Neural Network (RNN) that are well-suited for time series data due to their ability to capture long-term dependencies. The model is trained on historical stock prices and can be used to predict future prices.
 
 Model Architecture
@@ -58,42 +57,7 @@ The results are visualized by plotting the predicted and actual stock prices.
 Future Predictions
 The trained model can be used to predict future stock prices. Given the last known sequence of stock prices, the model predicts the next n time steps (e.g., 30 days). The predictions are inverse-transformed to their original scale and visualized.
 
-Usage
-Step 1: Install Dependencies
-Ensure you have the required libraries installed:
 
-bash
-复制
-pip install numpy pandas torch matplotlib scikit-learn yfinance
-Step 2: Run the Script
-Run the script to train the model, backtest it, and generate future predictions:
-
-bash
-复制
-python lstm_stock_prediction.py
-Step 3: Interpret Results
-The script will output training loss values for each epoch.
-
-Backtest results (MSE, RMSE, MAE) will be printed.
-
-Plots of actual vs. predicted prices and future predictions will be displayed.
-
-Dependencies
-Python 3.x
-
-Libraries:
-
-numpy
-
-pandas
-
-torch
-
-matplotlib
-
-scikit-learn
-
-yfinance
 
 Project2:Game Behavior Data Collection SDK (GameEventTracker Class) This part implements the in-game event tracking system. The main functions include:
 Initialize player sessions and user information Track various game events (startup, payment, upgrade, task completion, card drawing, etc.) Ensure data security through a signature mechanism Send data to the backend server for analysis
